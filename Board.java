@@ -1,9 +1,12 @@
 import java.awt.*; 
-import java.awt.event.*; 
 import javax.swing.*; 
 public class Board extends JPanel 
 {
-    //board
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//board
     public Coord[][] coords = new Coord[4][4];
     public Coord[][] temp = new Coord[4][4];
     //background
@@ -73,6 +76,7 @@ public class Board extends JPanel
     public void reset(){
         coords=new Coord[4][4];
         score=0;
+        lost=0;
         load();
     }
     public void undo(){
@@ -117,15 +121,19 @@ public class Board extends JPanel
             }
         }
         if(lost==1){
-            g.drawImage(background,0,0,null);
-            g.drawImage(lose,50,100,null);
-            g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
-            g.drawString("Oh no you lost! :(",70,170); 
-            g.drawString("Better luck next time!!",70,200); 
+            g.fillRect(0,0,530,740);
+            g.drawImage(lose,50,80,null);
+            g.setFont(new Font("Serif", Font.PLAIN, 30));
+            g.setColor(Color.black);
+            g.drawString("No more moves!!!",150,530); 
+            g.drawString("Your score was",165,560); 
+            g.drawString(""+score,180,610); 
+            g.drawString("Press \"R\" to restart",135,660);
         }
     }
     public void spawn(){
         int count=0;
+        int timeout =0;
         while(count==0){
             double x=Math.random();
             double y=Math.random();
@@ -144,6 +152,14 @@ public class Board extends JPanel
                 else coords[r][c].setValue(4);
                 count++;
             }
+            else {
+                timeout++;
+                System.out.println(timeout);
+            }
+            if (timeout>1000)
+                {lost=1;
+                 count++;
+                }
         }
     }
     public void down(){

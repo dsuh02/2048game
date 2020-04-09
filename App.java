@@ -1,8 +1,12 @@
 import javax.swing.JFrame;
 import java.awt.event.*; 
+@SuppressWarnings("serial")
 public class App extends JFrame
 {
-    public App()
+    /**
+	 * 
+	 */
+	public App()
     {
         initUI();
     }
