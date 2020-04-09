@@ -1,12 +1,11 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+PROJECT TITLE: 2048 game
+PURPOSE OF PROJECT: to beat mindy in making a game
+VERSION or DATE: 1.0  
+HOW TO START THIS PROJECT: get gud
+AUTHORS: Daniel
+USER INSTRUCTIONS: download all of the above, compile, and run the App class
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+  
+  Arrow keys: movement
+  Enter key: end game
+  R key: restart game
